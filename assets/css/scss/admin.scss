@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/*-----------------------------------------------------------------------------
+Admin Stylesheet
+-----------------------------------------------------------------------------*/
+
+// Paths
+$font-path: "../fonts";
+$fa-font-path: $font-path;
+
+// FontAwesome
+@import "@fortawesome/fontawesome-free/scss/variables";
+@import "@fortawesome/fontawesome-free/scss/mixins";
+
+@font-face {
+  font-family: 'ShipBob FA5';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$fa-font-path}/fa-regular-400.eot');
+  src: url('#{$fa-font-path}/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-regular-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-regular-400.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'ShipBob FA5';
+  font-style: normal;
+  font-weight: 900;
+  src: url('#{$fa-font-path}/fa-solid-900.eot');
+  src: url('#{$fa-font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-solid-900.woff') format('woff'),
+  url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+@font-face {
+  font-family: 'ShipBob FA5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url('#{$fa-font-path}/fa-brands-400.eot');
+  src: url('#{$fa-font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-brands-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+.shipbob {
+  &.bootstrap {
+    @import "bootstrap/scss/functions";
+    @import "bootstrap/scss/variables";
+    @import "bootstrap/scss/mixins";
+    @import "bootstrap/scss/reboot";
+
+    @import "bootstrap/scss/grid";
+    @import "bootstrap/scss/utilities/display";
+    @import "bootstrap/scss/utilities/flex";
+
+    @import "bootstrap/scss/forms";
+    @import "bootstrap/scss/buttons";
+    @import "bootstrap/scss/transitions";
+    @import "bootstrap/scss/dropdown";
+    @import "bootstrap/scss/button-group";
+    @import "bootstrap/scss/input-group";
+    @import "bootstrap/scss/custom-forms";
+
+    @import "bootstrap/scss/card";
+    @import "bootstrap/scss/alert";
+
+    @import "bootstrap/scss/nav";
+    @import "bootstrap/scss/navbar";
+
+    @import "bootstrap/scss/close";
+
+    @import "bootstrap/scss/utilities";
+  }
+
+  &.font-awesome {
+    @import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+    .far {
+      font-family: 'ShipBob FA5';
+      font-weight: 400;
+    }
+
+    .fa, .fas {
+      font-family: 'ShipBob FA5';
+      font-weight: 900;
+    }
+
+    .fab {
+      font-family: 'ShipBob FA5 Brands';
+    }
+
+  }
+
+  &.wrap {
+    .fa-truck {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    p.submit {
+      padding: 0px;
+      margin-bottom: auto;
+    }
+
+    .nav-tabs {
+      .nav-link {
+        background-color: #c8c8c8;
+        color: #495057;
+        margin-right: 4px;
+        border-top-right-radius: 10px;
+        padding: 6px 12px;
+
+        &.active {
+          background-color: #ffffff;
+        }
+
+        &:focus {
+          outline: 0;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .tab-content {
+      border: 1px solid #dee2e6;
+      border-top: 0px;
+    }
+
+    .tab-pane {
+      padding: 20px;
+      min-height: 300px;
+
+      &.active {
+        background-color: #ffffff;
+      }
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .switch {
+      height: 2rem;
+      position: relative;
+      outline: 0;
+      font-size: .875rem;
+      font-weight: 700;
+      color: #ffffff;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .switch-input {
+      position: absolute;
+      margin-bottom: 0;
+      opacity: 0;
+    }
+
+    input:checked ~ .switch-paddle {
+      background-color: green;
+    }
+
+    input + .switch-paddle {
+      margin: 0;
+    }
+
+    .switch-paddle {
+      position: relative;
+      display: block;
+      width: 4rem;
+      height: 2rem;
+      border-radius: 10px;
+      background: #c8c8c8;
+      transition: all .25s ease-out;
+      font-weight: inherit;
+      color: inherit;
+      cursor: pointer;
+
+      &:after {
+        position: absolute;
+        top: .25rem;
+        left: .25rem;
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        transform: translateZ(0);
+        border-radius: 10px;
+        background: #ffffff;
+        transition: all .25s ease-out;
+        content: "";
+      }
+    }
+
+    input:checked + label > .switch-active {
+      display: block;
+    }
+
+    .switch-active, .switch-inactive {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .switch-active {
+      left: 8%;
+      display: none;
+    }
+
+    .switch-inactive {
+      right: 15%;
+    }
+
+    input:checked + label > .switch-inactive {
+      display: none;
+    }
+
+    input:checked ~ .switch-paddle:after {
+      left: 2.25rem;
+    }
+
+    .agree-text {
+      font-size: 15px;
+    }
+
+  }
+
+}
+
+ul#adminmenu {
+  li.toplevel_page_shipbob-express-rates {
+    .wp-menu-image {
+      &:before {
+        @include fa-icon;
+        font-family: 'ShipBob FA5';
+        font-weight: 900;
+        font-size: 16px;
+        content: fa-content($fa-var-truck);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        position: relative;
+        top: 2px;
+      }
+    }
+
+  }
+}    
